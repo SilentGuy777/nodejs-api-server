@@ -55,7 +55,7 @@ Below details the description of the structure and directories:
 |src/main/controller|API endpoint implementation and its exposure is declared here.|
 |src/main/model|Common data structure objects are declared here.|
 |src/main/repo|DB query handling logics are declared here.|
-|src/main/service|Business logics and information processing logics are declred here.|
+|src/main/service|Business logics and information processing logics are declared here.|
 |src/main/utils|Common utility functions that can be used across are declared here.|
 |src/main/validators|Validation of request data from APIs declared are done here.|
 |src/test|Contains the unit test cases for the codes implemented under the main folder.|
