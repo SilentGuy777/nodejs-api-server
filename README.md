@@ -270,7 +270,7 @@ Below details the list of APIs implemented and their specifications.
         "isSuccess": false
       }
       ```
-### 7.2 Response Codes
+### 7.2. Response Codes
 Below lists the HTTP Response codes that are return by the API implementation:
 |HTTP Response Code|Description|Usage|
 |:---|:---|:---|
@@ -281,9 +281,9 @@ Below lists the HTTP Response codes that are return by the API implementation:
 |500|Internal Server Error|When any exception occurs / business logic exceptions occurs / DB query exceptions occurs.|
 
 
-## Compiling and Testing Instructions
-### Pre-requisites
-#### 1. Ensure NodeJS and NPM are installed
+## 8. Compiling and Testing Instructions
+### 8.1. Pre-requisites
+#### 8.1.1. Ensure NodeJS and NPM are installed
 ```
 C:\Users>node --version
 v16.14.0
@@ -291,7 +291,7 @@ v16.14.0
 C:\Users>npm --version
 8.3.1
 ```
-#### 2. Configure / Setup required database, tables and connection
+#### 8.1.2. Configure / Setup required database, tables and connection
 - Ensure MySQL is installed on local machine.
 - Refer to dbScripts.sql file in the root project directory and execute the SQL scripts present in dbScripts.sql file.
 - Refer to src/main/config/DBConfig.js file and change the DB configuration accordingly:
@@ -317,11 +317,11 @@ module.exports = function(){
 }
 ```
 
-#### 3. Setup Postman API collection
+#### 8.1.3. Setup Postman API collection
 - Ensure Postman is installed on local machine.
 - Refer to NodeJS API Assessment.postman_collection.json file in root project directory, import that postman collection file into Postman.
 
-### Compiling the project
+### 8.2. Compiling the project
 - Download the project code from GitHub link (above).
 - Using the CMD / Terminal, go to the NodeJS directory and execute the following command:
   ```
@@ -342,7 +342,7 @@ module.exports = function(){
   ```
 - After application is started successfully, you can use the Postman collection to test make the API calls to application.
 
-### Running Unit Test
+### 8.3. Running Unit Test
 For unit testing, Jest module is being used to conduct unit testing for the functionalities implemented.
 
 Run the following command in CMD / Terminal to run unit testing:
