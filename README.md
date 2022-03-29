@@ -114,7 +114,7 @@ Below details the list of APIs implemented and their specifications.
         |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
         |message|String / Objects[]|Any error or success message definitions|
         |errors|String[]|More detailed list of error messages|
-        |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
+        |isSuccess|Boolean|Indicates if the API call outcome is success or fail in overall|
     - Success Sample:
       - HTTP Response Code: 204
       - Response Body: NIL
@@ -178,7 +178,7 @@ Below details the list of APIs implemented and their specifications.
         |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
         |message|String / Objects[]|Any error or success message definitions|
         |errors|String[]|More detailed list of error messages|
-        |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
+        |isSuccess|Boolean|Indicates if the API call outcome is success or fail in overall|
     - Success Sample:
       - HTTP Response Code: 200
       - Response Body:
@@ -230,7 +230,7 @@ Below details the list of APIs implemented and their specifications.
         |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
         |message|String / Objects[]|Any error or success message definitions|
         |errors|String[]|More detailed list of error messages|
-        |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
+        |isSuccess|Boolean|Indicates if the API call outcome is success or fail in overall|
     - Success Sample:
       - HTTP Response Code: 204
       - Response Body: NIL
@@ -276,7 +276,7 @@ Below details the list of APIs implemented and their specifications.
         |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
         |message|String / Objects[]|Any error or success message definitions|
         |errors|String[]|More detailed list of error messages|
-        |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
+        |isSuccess|Boolean|Indicates if the API call outcome is success or fail in overall|
     - Success Sample:
       - HTTP Response Code: 200
       - Response Body:
