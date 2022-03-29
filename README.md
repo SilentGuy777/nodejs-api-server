@@ -271,5 +271,80 @@ Below details the list of APIs implemented and their specifications.
 ## Compiling and Testing Instructions
 ### Pre-requisites
 1. Ensure NodeJS and NPM are installed
+```
+C:\Users>node --version
+v16.14.0
+
+C:\Users>npm --version
+8.3.1
+```
 2. Configure /setup required database, tables and connection
-3. Setup Postman API collection
+- Ensure MySQL is installed on local machine.
+- Refer to dbScripts.sql file in the root project directory and execute the SQL scripts present in dbScripts.sql file.
+- Refer to src/main/config/DBConfig.js file and change the DB configuration accordingly:
+```diff
+/*
+    Author: Premkumar
+    Description: Contains the Database (DB) confiuration and initialisation.
+*/
+
+// DB Config for Datasource ======================================
+/* Synchronous DB Config */
+const mysql = require('sync-mysql'); 
+
+module.exports = function(){
+    const connection = new mysql({
+-        host: '<to_be_modified_accordingly>',
+-        user: '<to_be_modified_accordingly>',
+-        password: '<to_be_modified_accordingly>',
+        database: 'nodejsdb'
+      });
+
+    return connection;
+}
+```
+
+4. Setup Postman API collection
+- Ensure Postman is installed on local machine.
+- Refer to NodeJS API Assessment.postman_collection.json file in root project directory, import that postman collection file into Postman.
+
+### Compiling the project
+- Download the project code from GitHub link (above).
+- Using the CMD / Terminal, go to the NodeJS directory and execute the following command:
+  ```
+  C:\Users\Downloads\nodejs-api-server-main\nodejs-api-server-main>npm install
+  ```
+- After downloading and installing the required dependencies are completed, start the application by executing the following command:
+  ```
+  C:\Users\Downloads\nodejs-api-server-main\nodejs-api-server-main>npm start
+  ```
+- Once application started successfully, you will see the following logs printed out:
+  ```
+  > my-server@1.0.0 start
+  > node ./index.js
+
+  {"class":"DBConfigTest","method":"testDBConnection","message":[{"NOW()":"2022-03-29T08:13:24.000Z"}]}
+  {"class":"DBConfigTest","method":"testDBConnection","message":"Connected to MySQL DB Server!"}
+  {"class":"Index","method":"default","message":"Server is running on PORT: 8081"}
+  ```
+- After application is started successfully, you can use the Postman collection to test make the API calls to application.
+
+### Running Unit Test
+For unit testing jest module is being used to conduct unit testing for the functionalities implemented.
+
+Run the following command in CMD / Terminal to run unit testing:
+```
+C:\Users\Downloads\nodejs-api-server-main\nodejs-api-server-main>npm test
+```
+The above command will run the unit tests codes declared under the src/test directory.
+
+When all unit test have passed successfully, the outcome will be displayed as shown below:
+```
+Test Suites: 8 passed, 8 total
+Tests:       51 passed, 51 total
+Snapshots:   0 total
+Time:        2.976 s, estimated 5 s
+Ran all test suites.
+
+C:\Users\Downloads\nodejs-api-server-main\nodejs-api-server-main>
+```
