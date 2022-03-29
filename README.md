@@ -94,8 +94,8 @@ Below details the list of APIs implemented and their specifications.
   - Request Body:
     |JSON Attribute Name|JSON Attribute Value Type|Mandatory|Description|
     |:---|:---|:---|:---|
-    |teacher|email address (String)|YES|Teacher's email address to register students under.|
-    |students|List of email address (Array of String)|YES|List of student's email addresses to be registered.|
+    |teacher|String|YES|Teacher's email address to register students under.|
+    |students|String[]|YES|List of student's email addresses to be registered.|
   - Request Params: NIL
   - Response:
     - General Response Structure:
