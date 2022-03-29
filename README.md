@@ -350,7 +350,7 @@ Ran all test suites.
 
 C:\Users\Downloads\nodejs-api-server-main\nodejs-api-server-main>
 ```
-The unit test coverage can be viewed by executing the following command:
+The unit test coverage statistics can be viewed by executing the following command:
 ```
 C:\Users\Downloads\nodejs-api-server-main\nodejs-api-server-main>npx jest --coverage
 ```
