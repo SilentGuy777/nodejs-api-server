@@ -259,7 +259,7 @@ Below details the list of APIs implemented and their specifications.
     |JSON Attribute Name|JSON Attribute Value Type|Mandatory|Description|
     |:---|:---|:---|:---|
     |teacher|String|YES|Teacher's email address to retrieve list of Students under this email.|
-    |notification|String|YES|Notification content to be sent to students. Notification content can contain mentioning of student;s email addresses to be sent notification to.|
+    |notification|String|YES|Notification content to be sent to students. Notification content can contain mentioning of students' email addresses to be sent notification to.|
     
     Sample Request Body:
     ```
