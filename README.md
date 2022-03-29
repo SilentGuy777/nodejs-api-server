@@ -67,15 +67,15 @@ Below describes the DB tables implemented and the schema of each DB table.
 
 |Column Name|Column Description|Column Properties|Primary Key|
 |:---|:---|:---|:---|
-|email|Teacher's email address|varchar(255) not null|YES|
+|email|Teacher's email address.|varchar(255) not null|YES|
   
 ### 5.2. DB Table : Students
 
 |Column Name|Column Description|Column Properties|Primary Key|
 |:---|:---|:---|:---|
-|email|Student's email address|varchar(255) not null|YES|
-|teachers|List of teacher's email addresses (delimited by comma) that the student is registered under|varchar(1024) not null|NO|
-|status|Student's profile statu. Currrent LOVs are ad follows: active, suspend|varchar(255) not null|NO|
+|email|Student's email address.|varchar(255) not null|YES|
+|teachers|List of teacher's email addresses (delimited by comma) that the student is registered under.|varchar(1024) not null|NO|
+|status|Student's profile status. Currrent LOVs are as follows: active, suspend.|varchar(255) not null|NO|
   
 *LOV : List Of Values
 
