@@ -16,7 +16,7 @@ Modules imported in NodeJS:
 |:---|:---|:---|
 |express|For API Implementation|npm install express --save|                
 |email-validator|To validate email address|npm install email-validator --save|
-|sync-mysql|Synchronous DB query Implemntation|npm install sync-mysql --save|
+|sync-mysql|Synchronous DB query Implementation|npm install sync-mysql --save|
 |jest|Used for unit testing|npm install --save-dev jest|
 |supertest|Used with jest for unit testing of APIs|npm install --save-dev supertest|
 
@@ -42,8 +42,8 @@ The project structure is defined as follows:
 Below details the description of the structure and directories:
 |Directory Path|Description|
 |:---|:---|
-|index.js|<TBC>|
-|package.json|<TBC>|
+|index.js|Handles the server startup and testing of DB connection and API port listening.|
+|package.json|Manifest file of NodeJS server project. Contains the metadata of the project.|
 |src|Contains all the source codes for the application.|
 |src/main|Contains the main source codes for handling API, DB transactions and business logics.|
 |src/main/config|Contains required configurations required for application (e.g. DB config, API (express) config).|
