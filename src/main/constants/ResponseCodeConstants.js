@@ -1,9 +1,0 @@
-const responseCodeConstants = {
-    HTTP_RESP_SUCCESS_CODE: 200,
-    HTTP_RESP_PARTIAL_SUCCESS_CODE: 202,
-    HTTP_RESP_NO_CONTENT_SUCCESS_CODE: 204,
-    HTTP_RESP_BAD_REQUEST_CODE: 400,
-    HTTP_RESP_INTERNAL_SERVER_ERROR_CODE: 500
-};
-
-module.exports = responseCodeConstants;
