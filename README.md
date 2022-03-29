@@ -1,2 +1,2 @@
-# nodejs-api-server
+# NodeJS API Assessment
 NodeJS API Assessment
