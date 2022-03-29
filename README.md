@@ -7,7 +7,7 @@ Teachers and students are identified by their email addresses.
 
 Therefore a backend system is being implemented that exposes APIs (Application Programming Interface) that allows the Teachers to perform their required administrative functions.
 
-## 2. Framework used
+## 2. Framework / Technologies used
 NodeJS with Javascript is being used for this backend server implementation.
 
 Modules imported in NodeJS:
@@ -16,9 +16,11 @@ Modules imported in NodeJS:
 |:---|:---|:---|
 |express|For API Implementation|npm install express --save|                
 |email-validator|To validate email address|npm install email-validator --save|
-|sync-mysql|Synchronous DB query Implementation|npm install sync-mysql --save|
+|sync-mysql|Synchronous MySQL DB query Implementation|npm install sync-mysql --save|
 |jest|Used for unit testing|npm install --save-dev jest|
 |supertest|Used with Jest for unit testing of APIs|npm install --save-dev supertest|
+
+For Database implementation, MySQL Database is used.
 
 ## 3. Assumptions
 Assume that login and access control have already been handled.
