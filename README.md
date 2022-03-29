@@ -59,13 +59,13 @@ Below details the description of the structure and directories:
 ## DB Schema
 Below describes the DB tables implemented and the schema of each DB table.
 
-1. DB Table : Teachers
+### 1. DB Table : Teachers
 
 |Column Name|Column Description|Column Properties|Primary Key|
 |:---|:---|:---|:---|
 |email|Teacher's email address|varchar(255) not null|YES|
   
-2. DB Table : Students
+### 2. DB Table : Students
 
 |Column Name|Column Description|Column Properties|Primary Key|
 |:---|:---|:---|:---|
@@ -91,6 +91,7 @@ Below details the list of APIs implemented and their specifications.
     |:---|:---|:---|:---|
     |teacher|email address (String)|YES|Teacher's email address to register students under.|
     |students|List of email address (Array of String)|YES|List of student's email addresses to be registered.|
+  - Request Params: NIL
   - Response
     - General Response Structure
         |JSON Attribute Name|JSON Attribute Value Type|Description|
@@ -138,8 +139,138 @@ Below details the list of APIs implemented and their specifications.
       }
       ```
 ### 2. retrieveStudentsCommonToTeachers
+  - URL Path: /api/commonstudents
+  - HTTP Method: GET
+  - Description: Use Case 2 : This API enables teachers to retrieve a list of students registered under the given list of teachers.
+  - Headers
+    |Header Name|Header Value|
+    |:---|:---|
+    |Content-Type|application/json|
+  - Request Body
+    NIL
+  - Request Params
+    |Parameter Name|Parameter Value Type|Mandatory|Description|
+    |:---|:---|:---|:---|
+    |teacher|String|YES|Teacher's email address.|
+  - Response
+    - General Response Structure
+        |JSON Attribute Name|JSON Attribute Value Type|Description|
+        |:---|:---|:---|
+        |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
+        |message|String / Objects[]|Any error or success message definitions|
+        |errors|String[]|More detailed list of error messages|
+        |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
+    - Success Sample
+      - HTTP Response Code: 200
+      - Response Body:
+        ```
+        {
+          "students": [
+            "commonstudent1@gmail.com",
+            "commonstudent4@gmail.com"
+          ]
+        }
+        ```
+    - Fail Sample
+      - HTTP Response Code: 400
+      - Response Body:
+      ```
+      {
+        "code": 400,
+        "message": "Data Validation Failed.",
+        "errors": [
+          "Request Param (teacher) is null / empty."
+        ],
+        "isSuccess": false
+      }
+      ```
 ### 3. suspendStudent
+  - URL Path: /api/suspend
+  - HTTP Method: POST
+  - Description: Use Case 3 : This API enables teachers to suspend a specific student.
+  - Headers
+    |Header Name|Header Value|
+    |:---|:---|
+    |Content-Type|application/json|
+  - Request Body
+    |JSON Attribute Name|JSON Attribute Value Type|Mandatory|Description|
+    |:---|:---|:---|:---|
+    |student|String|YES|Student's email address to be suspended.|
+  - Request Params
+    NIL
+  - Response
+    - General Response Structure
+        |JSON Attribute Name|JSON Attribute Value Type|Description|
+        |:---|:---|:---|
+        |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
+        |message|String / Objects[]|Any error or success message definitions|
+        |errors|String[]|More detailed list of error messages|
+        |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
+    - Success Sample
+      - HTTP Response Code: 204
+      - Response Body:
+        NIL
+    - Fail Sample
+      - HTTP Response Code: 400
+      - Response Body:
+      ```
+      {
+        "code": 400,
+        "message": "Data Validation Failed.",
+        "errors": [
+          "JSON key (student) is missing / value is empty."
+        ],
+        "isSuccess": false
+      }
+      ```
 ### 4. retrieveStudentsForNotifications
+  - URL Path: /api/retrievefornotifications
+  - HTTP Method: POST
+  - Description: Use Case 4 : This API enables teachers to retrieve list of students who can receive a notification.
+  - Headers
+    |Header Name|Header Value|
+    |:---|:---|
+    |Content-Type|application/json|
+  - Request Body
+    |JSON Attribute Name|JSON Attribute Value Type|Mandatory|Description|
+    |:---|:---|:---|:---|
+    |teacher|String|YES|Teacher's email address to retrieve list of Students under this email.|
+    |notification|String|YES|Notification content to be sent to students. Notification content can contain mentioning of student;s email addresses to be sent notification to.|
+  - Request Params
+    NIL
+  - Response
+    - General Response Structure
+        |JSON Attribute Name|JSON Attribute Value Type|Description|
+        |:---|:---|:---|
+        |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
+        |message|String / Objects[]|Any error or success message definitions|
+        |errors|String[]|More detailed list of error messages|
+        |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
+    - Success Sample
+      - HTTP Response Code: 200
+      - Response Body:
+        ```
+        {
+          "recipients": [
+            "commonstudent1@gmail.com",
+            "commonstudent4@gmail.com"
+          ]
+        }
+        ```
+    - Fail Sample
+      - HTTP Response Code: 400
+      - Response Body:
+      ```
+      {
+        "code": 400,
+        "message": "Data Validation Failed.",
+        "errors": [
+          "JSON key (teacher) is missing / value is empty.",
+          "JSON key (notification) is missing / value is empty."
+        ],
+        "isSuccess": false
+      }
+      ```
 
 ## Compiling and Testing Instructions
 ### Pre-requisites
