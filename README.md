@@ -76,6 +76,8 @@ Below describes the DB tables implemented and the schema of each DB table.
 *LOV : List Of Values
 
 ## API Interface Specs
+Below details the list of APIs implemented and their specifications.
+  
 ### 1. registerStudents
   - URL Path: /api/register
   - HTTP Method: POST
@@ -93,9 +95,9 @@ Below describes the DB tables implemented and the schema of each DB table.
     - General Response Structure
         |JSON Attribute Name|JSON Attribute Value Type|Description|
         |:---|:---|:---|
-        |code|202, 204, 400, 500 (Integer)|HTTP codes|
-        |message|String or Array of objects|Any error or success message definitions|
-        |errors|Array of String|More detailed list of error messages|
+        |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
+        |message|String / Objects[]|Any error or success message definitions|
+        |errors|String[]|More detailed list of error messages|
         |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
     - Success Sample
       - HTTP Response Code: 204
