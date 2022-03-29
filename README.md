@@ -96,6 +96,16 @@ Below details the list of APIs implemented and their specifications.
     |:---|:---|:---|:---|
     |teacher|String|YES|Teacher's email address to register students under.|
     |students|String[]|YES|List of student's email addresses to be registered.|
+    
+    Sample Request Body:
+    ```
+    {
+      "teacher": "teacherken@gmail.com",
+      "students":[
+          "commonstudent4@gmail.com"
+      ]
+    }
+    ```
   - Request Params: NIL
   - Response:
     - General Response Structure:
@@ -156,6 +166,11 @@ Below details the list of APIs implemented and their specifications.
     |Parameter Name|Parameter Value Type|Mandatory|Description|
     |:---|:---|:---|:---|
     |teacher|String|YES|Teacher's email address.|
+    
+    Sample Request URL with params:
+    ```
+    http://localhost:8081/api/commonstudents?teacher=teacherkenny@gmail.com&teacher=teacherjoe@gmail.com
+    ```
   - Response:
     - General Response Structure:
         |JSON Attribute Name|JSON Attribute Value Type|Description|
@@ -200,6 +215,13 @@ Below details the list of APIs implemented and their specifications.
     |JSON Attribute Name|JSON Attribute Value Type|Mandatory|Description|
     |:---|:---|:---|:---|
     |student|String|YES|Student's email address to be suspended.|
+    
+    Sample Request Body:
+    ```
+    {
+      "student" : "studenthon@gmail.com"
+    }
+    ```
   - Request Params: NIL
   - Response:
     - General Response Structure:
@@ -238,6 +260,14 @@ Below details the list of APIs implemented and their specifications.
     |:---|:---|:---|:---|
     |teacher|String|YES|Teacher's email address to retrieve list of Students under this email.|
     |notification|String|YES|Notification content to be sent to students. Notification content can contain mentioning of student;s email addresses to be sent notification to.|
+    
+    Sample Request Body:
+    ```
+    {
+      "teacher": "teacherkenny@gmail.com",
+      "notification": "Hello students! @commonstudent1@gmail.com  @commonstudent2@gmail.com"
+    }
+    ``
   - Request Params: NIL
   - Response:
     - General Response Structure:
