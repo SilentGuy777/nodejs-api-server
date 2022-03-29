@@ -307,7 +307,7 @@ Below lists the HTTP Response codes that are return by the API implementation:
 |HTTP Response Code|Description|Usage|
 |:---|:---|:---|
 |200|OK|When request is processed successfully. Response body is returned if available.|
-|202|Accepted|When required is partial success, with some success and some errors. Response body is contains the Response object detailing the outcome of processing.|
+|202|Accepted|When required is partial success, with some success and some errors. Response body contains the Response object detailing the outcome of processing.|
 |204|No Content|When request is processed successfully and response body not required to be returned.|
 |400|Bad Request|When request content validation fails.|
 |500|Internal Server Error|When any exception occurs / business logic exceptions occurs / DB query exceptions occurs.|
