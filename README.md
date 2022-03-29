@@ -2,14 +2,14 @@
 NodeJS API Assessment
 
 
-# Objective
+## Objective
 
-# Pre-requisites / Background Info
+## Pre-requisites / Background Info
 
-# Assumptions
+## Assumptions
 
-# Project Structure and Design
+## Project Structure and Design
 
-# DB Schema
+## DB Schema
 
-# API Interface Specs
+## API Interface Specs
