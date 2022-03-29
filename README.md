@@ -57,8 +57,8 @@ Below details the description of the structure and directories:
 |src/main/repo|DB query handling logics are declared here.|
 |src/main/service|Business logics and information processing logics are declared here.|
 |src/main/utils|Common utility functions that can be used across are declared here.|
-|src/main/validators|Validation of request data from APIs declared are done here.|
-|src/test|Contains the unit test cases for the codes implemented under the main folder.|
+|src/main/validators|Validation of request data from APIs are done here.|
+|src/test|Contains the unit test cases for the codes implemented under the src/main folder.|
 
 ## 5. DB Schema
 Below describes the DB tables implemented and the schema of each DB table.
