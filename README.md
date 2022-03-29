@@ -1,13 +1,13 @@
-# NodeJS API Assessment
+# 1. NodeJS API Assessment
 Below describes the implementation of NodeJS backend server implementation for the NodeJS API Assessment. 
 
-## Objective / Background
+## 2. Objective / Background
 Teachers need a system where they can perform administrative functions for their students.
 Teachers and students are identified by their email addresses.
 
 Therefore a backend system is being implemented that exposes APIs (Application Programming Interface) that allows the Teachers to perform their required administrative functions.
 
-## Framework used
+## 3. Framework used
 NodeJS with Javascript is being used for this backend server implementation.
 
 Modules imported in NodeJS:
@@ -20,10 +20,10 @@ Modules imported in NodeJS:
 |jest|Used for unit testing|npm install --save-dev jest|
 |supertest|Used with Jest for unit testing of APIs|npm install --save-dev supertest|
 
-## Assumptions
+## 4. Assumptions
 Assume that login and access control have already been handled.
 
-## Project Structure and Design
+## 5. Project Structure and Design
 The project structure is defined as follows:
 ```
 - src
@@ -58,16 +58,16 @@ Below details the description of the structure and directories:
 |src/main/validators|Validation of request data from APIs declared are done here.|
 |src/test|Contains the unit test cases for the codes implemented under the main folder.|
 
-## DB Schema
+## 6. DB Schema
 Below describes the DB tables implemented and the schema of each DB table.
 
-### 1. DB Table : Teachers
+### 6.1. DB Table : Teachers
 
 |Column Name|Column Description|Column Properties|Primary Key|
 |:---|:---|:---|:---|
 |email|Teacher's email address|varchar(255) not null|YES|
   
-### 2. DB Table : Students
+### 6.2. DB Table : Students
 
 |Column Name|Column Description|Column Properties|Primary Key|
 |:---|:---|:---|:---|
@@ -77,10 +77,11 @@ Below describes the DB tables implemented and the schema of each DB table.
   
 *LOV : List Of Values
 
-## API Interface Specs
+## 7. API Interface Specs
 Below details the list of APIs implemented and their specifications.
   
-### 1. registerStudents
+### 7.1. APIs Implemented
+#### 7.1.1. registerStudents
   - URL Path: /api/register
   - HTTP Method: POST
   - Description: Use Case 1 : This API enables teachers to register one or more students to a specified teacher.
@@ -140,7 +141,7 @@ Below details the list of APIs implemented and their specifications.
         "isSuccess": false
       }
       ```
-### 2. retrieveStudentsCommonToTeachers
+#### 7.1.2. retrieveStudentsCommonToTeachers
   - URL Path: /api/commonstudents
   - HTTP Method: GET
   - Description: Use Case 2 : This API enables teachers to retrieve a list of students registered under the given list of teachers.
@@ -185,7 +186,7 @@ Below details the list of APIs implemented and their specifications.
         "isSuccess": false
       }
       ```
-### 3. suspendStudent
+#### 7.1.3. suspendStudent
   - URL Path: /api/suspend
   - HTTP Method: POST
   - Description: Use Case 3 : This API enables teachers to suspend a specific student.
@@ -222,7 +223,7 @@ Below details the list of APIs implemented and their specifications.
         "isSuccess": false
       }
       ```
-### 4. retrieveStudentsForNotifications
+#### 7.1.4. retrieveStudentsForNotifications
   - URL Path: /api/retrievefornotifications
   - HTTP Method: POST
   - Description: Use Case 4 : This API enables teachers to retrieve list of students who can receive a notification.
@@ -269,6 +270,16 @@ Below details the list of APIs implemented and their specifications.
         "isSuccess": false
       }
       ```
+### 7.2 Response Codes
+Below lists the HTTP Response codes that are return by the API implementation:
+|HTTP Response Code|Description|Usage|
+|:---|:---|:---|
+|200|OK|When request is processed successfully. Response body is returned if available.|
+|202|Accepted|When required is partial success, with some success and some errors. Response body is contains the Response object detailing the outcome of processing.|
+|204|No Content|When request is processed successfully and response body not required to be returned.|
+|400|Bad Request|When request content validation fails.|
+|500|Internal Server Error|When any exception occurs / business logic exceptions occurs / DB query exceptions occurs.|
+
 
 ## Compiling and Testing Instructions
 ### Pre-requisites
@@ -280,7 +291,7 @@ v16.14.0
 C:\Users>npm --version
 8.3.1
 ```
-#### 2. Configure /setup required database, tables and connection
+#### 2. Configure / Setup required database, tables and connection
 - Ensure MySQL is installed on local machine.
 - Refer to dbScripts.sql file in the root project directory and execute the SQL scripts present in dbScripts.sql file.
 - Refer to src/main/config/DBConfig.js file and change the DB configuration accordingly:
