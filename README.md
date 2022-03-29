@@ -18,13 +18,14 @@ Modules imported in NodeJS:
 |email-validator|To validate email address|npm install email-validator --save|
 |sync-mysql|Synchronous DB query Implementation|npm install sync-mysql --save|
 |jest|Used for unit testing|npm install --save-dev jest|
-|supertest|Used with jest for unit testing of APIs|npm install --save-dev supertest|
+|supertest|Used with Jest for unit testing of APIs|npm install --save-dev supertest|
 
 ## Assumptions
 Assume that login and access control have already been handled.
 
 ## Project Structure and Design
 The project structure is defined as follows:
+```
 - src
   - main
     - config
@@ -38,6 +39,7 @@ The project structure is defined as follows:
   - test
 - index.js
 - package.json
+```
 
 Below details the description of the structure and directories:
 |Directory Path|Description|
@@ -270,7 +272,7 @@ Below details the list of APIs implemented and their specifications.
 
 ## Compiling and Testing Instructions
 ### Pre-requisites
-1. Ensure NodeJS and NPM are installed
+#### 1. Ensure NodeJS and NPM are installed
 ```
 C:\Users>node --version
 v16.14.0
@@ -278,7 +280,7 @@ v16.14.0
 C:\Users>npm --version
 8.3.1
 ```
-2. Configure /setup required database, tables and connection
+#### 2. Configure /setup required database, tables and connection
 - Ensure MySQL is installed on local machine.
 - Refer to dbScripts.sql file in the root project directory and execute the SQL scripts present in dbScripts.sql file.
 - Refer to src/main/config/DBConfig.js file and change the DB configuration accordingly:
@@ -304,7 +306,7 @@ module.exports = function(){
 }
 ```
 
-4. Setup Postman API collection
+#### 3. Setup Postman API collection
 - Ensure Postman is installed on local machine.
 - Refer to NodeJS API Assessment.postman_collection.json file in root project directory, import that postman collection file into Postman.
 
@@ -330,7 +332,7 @@ module.exports = function(){
 - After application is started successfully, you can use the Postman collection to test make the API calls to application.
 
 ### Running Unit Test
-For unit testing jest module is being used to conduct unit testing for the functionalities implemented.
+For unit testing, Jest module is being used to conduct unit testing for the functionalities implemented.
 
 Run the following command in CMD / Terminal to run unit testing:
 ```
@@ -344,6 +346,53 @@ Test Suites: 8 passed, 8 total
 Tests:       51 passed, 51 total
 Snapshots:   0 total
 Time:        2.976 s, estimated 5 s
+Ran all test suites.
+
+C:\Users\Downloads\nodejs-api-server-main\nodejs-api-server-main>
+```
+The unit test coverage can be viewed by executing the following command:
+```
+C:\Users\Downloads\nodejs-api-server-main\nodejs-api-server-main>npx jest --coverage
+```
+
+Below shows the sample output of unit test coverage statistics:
+```
+---------------------------|---------|----------|---------|---------|------------------------------------------------------------
+File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+---------------------------|---------|----------|---------|---------|------------------------------------------------------------
+All files                  |   65.32 |    78.68 |   83.01 |   65.37 |
+ config                    |     100 |      100 |     100 |     100 |
+  ControllerConfig.js      |     100 |      100 |     100 |     100 |
+  DBConfig.js              |     100 |      100 |     100 |     100 |
+  ExpressConfig.js         |     100 |      100 |     100 |     100 |
+ constants                 |     100 |      100 |     100 |     100 |
+  ErrorCodeConstants.js    |     100 |      100 |     100 |     100 |
+  ResponseCodeConstants.js |     100 |      100 |     100 |     100 |
+  StudentConstants.js      |     100 |      100 |     100 |     100 |
+ controller                |      80 |      100 |     100 |      80 |
+  ApiController.js         |   78.94 |      100 |     100 |   78.94 | 42-47,92-97,129-134,183-188
+  BaseController.js        |     100 |      100 |     100 |     100 |
+ model/response            |   83.33 |      100 |      50 |   83.33 |
+  ResponseModel.js         |   83.33 |      100 |      50 |   83.33 | 15
+ repo                      |   12.98 |        0 |       0 |   13.07 |
+  StudentRepo.js           |   10.52 |        0 |       0 |   10.61 | 16-43,48-75,80-107,112-139,144-181,186-213
+  TeacherRepo.js           |      20 |        0 |       0 |      20 | 15-42,47-75
+ service                   |   85.09 |    89.05 |     100 |   85.09 |
+  ApiService.js            |     100 |      100 |     100 |     100 |
+  StudentService.js        |   79.59 |    86.59 |     100 |   79.59 | 28-35,46-48,67-68,78-80,91,123-125,137-139,158-159,184-186
+  TeacherService.js        |      80 |    88.88 |     100 |      80 | 25-26,36-38
+ utils                     |   90.47 |     87.5 |     100 |   90.24 |
+  CommonUtils.js           |   88.88 |     87.5 |     100 |   88.57 | 31-34
+  LoggingUtils.js          |     100 |      100 |     100 |     100 |
+ validators                |    81.7 |    85.71 |     100 |    81.7 |
+  ApiValidators.js         |   80.51 |    85.45 |     100 |   80.51 | 14,23,32,36,42,46,64,70,74,88,97,109,118,131,151
+  CommonValidators.js      |     100 |      100 |     100 |     100 |
+---------------------------|---------|----------|---------|---------|------------------------------------------------------------
+
+Test Suites: 8 passed, 8 total
+Tests:       51 passed, 51 total
+Snapshots:   0 total
+Time:        3.269 s, estimated 4 s
 Ran all test suites.
 
 C:\Users\Downloads\nodejs-api-server-main\nodejs-api-server-main>
