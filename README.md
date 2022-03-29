@@ -1,13 +1,13 @@
-# 1. NodeJS API Assessment
+# NodeJS API Assessment
 Below describes the implementation of NodeJS backend server implementation for the NodeJS API Assessment. 
 
-## 2. Objective / Background
+## 1. Objective / Background
 Teachers need a system where they can perform administrative functions for their students.
 Teachers and students are identified by their email addresses.
 
 Therefore a backend system is being implemented that exposes APIs (Application Programming Interface) that allows the Teachers to perform their required administrative functions.
 
-## 3. Framework used
+## 2. Framework used
 NodeJS with Javascript is being used for this backend server implementation.
 
 Modules imported in NodeJS:
@@ -20,10 +20,10 @@ Modules imported in NodeJS:
 |jest|Used for unit testing|npm install --save-dev jest|
 |supertest|Used with Jest for unit testing of APIs|npm install --save-dev supertest|
 
-## 4. Assumptions
+## 3. Assumptions
 Assume that login and access control have already been handled.
 
-## 5. Project Structure and Design
+## 4. Project Structure and Design
 The project structure is defined as follows:
 ```
 - src
@@ -58,16 +58,16 @@ Below details the description of the structure and directories:
 |src/main/validators|Validation of request data from APIs declared are done here.|
 |src/test|Contains the unit test cases for the codes implemented under the main folder.|
 
-## 6. DB Schema
+## 5. DB Schema
 Below describes the DB tables implemented and the schema of each DB table.
 
-### 6.1. DB Table : Teachers
+### 5.1. DB Table : Teachers
 
 |Column Name|Column Description|Column Properties|Primary Key|
 |:---|:---|:---|:---|
 |email|Teacher's email address|varchar(255) not null|YES|
   
-### 6.2. DB Table : Students
+### 5.2. DB Table : Students
 
 |Column Name|Column Description|Column Properties|Primary Key|
 |:---|:---|:---|:---|
@@ -77,11 +77,11 @@ Below describes the DB tables implemented and the schema of each DB table.
   
 *LOV : List Of Values
 
-## 7. API Interface Specs
+## 6. API Interface Specs
 Below details the list of APIs implemented and their specifications.
   
-### 7.1. APIs Implemented
-#### 7.1.1. registerStudents
+### 6.1. APIs Implemented
+#### 6.1.1. registerStudents
   - URL Path: /api/register
   - HTTP Method: POST
   - Description: Use Case 1 : This API enables teachers to register one or more students to a specified teacher.
@@ -141,7 +141,7 @@ Below details the list of APIs implemented and their specifications.
         "isSuccess": false
       }
       ```
-#### 7.1.2. retrieveStudentsCommonToTeachers
+#### 6.1.2. retrieveStudentsCommonToTeachers
   - URL Path: /api/commonstudents
   - HTTP Method: GET
   - Description: Use Case 2 : This API enables teachers to retrieve a list of students registered under the given list of teachers.
@@ -186,7 +186,7 @@ Below details the list of APIs implemented and their specifications.
         "isSuccess": false
       }
       ```
-#### 7.1.3. suspendStudent
+#### 6.1.3. suspendStudent
   - URL Path: /api/suspend
   - HTTP Method: POST
   - Description: Use Case 3 : This API enables teachers to suspend a specific student.
@@ -223,7 +223,7 @@ Below details the list of APIs implemented and their specifications.
         "isSuccess": false
       }
       ```
-#### 7.1.4. retrieveStudentsForNotifications
+#### 6.1.4. retrieveStudentsForNotifications
   - URL Path: /api/retrievefornotifications
   - HTTP Method: POST
   - Description: Use Case 4 : This API enables teachers to retrieve list of students who can receive a notification.
@@ -270,7 +270,7 @@ Below details the list of APIs implemented and their specifications.
         "isSuccess": false
       }
       ```
-### 7.2. Response Codes
+### 6.2. Response Codes
 Below lists the HTTP Response codes that are return by the API implementation:
 |HTTP Response Code|Description|Usage|
 |:---|:---|:---|
@@ -281,9 +281,9 @@ Below lists the HTTP Response codes that are return by the API implementation:
 |500|Internal Server Error|When any exception occurs / business logic exceptions occurs / DB query exceptions occurs.|
 
 
-## 8. Compiling and Testing Instructions
-### 8.1. Pre-requisites
-#### 8.1.1. Ensure NodeJS and NPM are installed
+## 7. Compiling and Testing Instructions
+### 7.1. Pre-requisites
+#### 7.1.1. Ensure NodeJS and NPM are installed
 ```
 C:\Users>node --version
 v16.14.0
@@ -291,7 +291,7 @@ v16.14.0
 C:\Users>npm --version
 8.3.1
 ```
-#### 8.1.2. Configure / Setup required database, tables and connection
+#### 7.1.2. Configure / Setup required database, tables and connection
 - Ensure MySQL is installed on local machine.
 - Refer to dbScripts.sql file in the root project directory and execute the SQL scripts present in dbScripts.sql file.
 - Refer to src/main/config/DBConfig.js file and change the DB configuration accordingly:
@@ -317,11 +317,11 @@ module.exports = function(){
 }
 ```
 
-#### 8.1.3. Setup Postman API collection
+#### 7.1.3. Setup Postman API collection
 - Ensure Postman is installed on local machine.
 - Refer to NodeJS API Assessment.postman_collection.json file in root project directory, import that postman collection file into Postman.
 
-### 8.2. Compiling the project
+### 7.2. Compiling the project
 - Download the project code from GitHub link (above).
 - Using the CMD / Terminal, go to the NodeJS directory and execute the following command:
   ```
@@ -342,7 +342,7 @@ module.exports = function(){
   ```
 - After application is started successfully, you can use the Postman collection to test make the API calls to application.
 
-### 8.3. Running Unit Test
+### 7.3. Running Unit Test
 For unit testing, Jest module is being used to conduct unit testing for the functionalities implemented.
 
 Run the following command in CMD / Terminal to run unit testing:
