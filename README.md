@@ -82,28 +82,28 @@ Below details the list of APIs implemented and their specifications.
   - URL Path: /api/register
   - HTTP Method: POST
   - Description: Use Case 1 : This API enables teachers to register one or more students to a specified teacher.
-  - Headers
+  - Headers:
     |Header Name|Header Value|
     |:---|:---|
     |Content-Type|application/json|
-  - Request Body
+  - Request Body:
     |JSON Attribute Name|JSON Attribute Value Type|Mandatory|Description|
     |:---|:---|:---|:---|
     |teacher|email address (String)|YES|Teacher's email address to register students under.|
     |students|List of email address (Array of String)|YES|List of student's email addresses to be registered.|
   - Request Params: NIL
-  - Response
-    - General Response Structure
+  - Response:
+    - General Response Structure:
         |JSON Attribute Name|JSON Attribute Value Type|Description|
         |:---|:---|:---|
         |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
         |message|String / Objects[]|Any error or success message definitions|
         |errors|String[]|More detailed list of error messages|
         |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
-    - Success Sample
+    - Success Sample:
       - HTTP Response Code: 204
       - Response Body: NIL
-    - Partial Success Sample
+    - Partial Success Sample:
       - HTTP Response Code: 202
       ```
       {
@@ -124,7 +124,7 @@ Below details the list of APIs implemented and their specifications.
       - message.added[] : List of Student and Teacher records that were added to DB.
       - message.skipped[] : List of Student and Teacher records that were skipped due to already present in DB.
       - message.updated[] : List of Student records that were updated in DB (updating teachers column) for existing Student records.
-    - Fail Sample
+    - Fail Sample:
       - HTTP Response Code: 400
       - Response Body:
       ```
@@ -142,25 +142,24 @@ Below details the list of APIs implemented and their specifications.
   - URL Path: /api/commonstudents
   - HTTP Method: GET
   - Description: Use Case 2 : This API enables teachers to retrieve a list of students registered under the given list of teachers.
-  - Headers
+  - Headers:
     |Header Name|Header Value|
     |:---|:---|
     |Content-Type|application/json|
-  - Request Body
-    NIL
-  - Request Params
+  - Request Body: NIL
+  - Request Params:
     |Parameter Name|Parameter Value Type|Mandatory|Description|
     |:---|:---|:---|:---|
     |teacher|String|YES|Teacher's email address.|
-  - Response
-    - General Response Structure
+  - Response:
+    - General Response Structure:
         |JSON Attribute Name|JSON Attribute Value Type|Description|
         |:---|:---|:---|
         |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
         |message|String / Objects[]|Any error or success message definitions|
         |errors|String[]|More detailed list of error messages|
         |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
-    - Success Sample
+    - Success Sample:
       - HTTP Response Code: 200
       - Response Body:
         ```
@@ -171,7 +170,7 @@ Below details the list of APIs implemented and their specifications.
           ]
         }
         ```
-    - Fail Sample
+    - Fail Sample:
       - HTTP Response Code: 400
       - Response Body:
       ```
@@ -188,29 +187,27 @@ Below details the list of APIs implemented and their specifications.
   - URL Path: /api/suspend
   - HTTP Method: POST
   - Description: Use Case 3 : This API enables teachers to suspend a specific student.
-  - Headers
+  - Headers:
     |Header Name|Header Value|
     |:---|:---|
     |Content-Type|application/json|
-  - Request Body
+  - Request Body:
     |JSON Attribute Name|JSON Attribute Value Type|Mandatory|Description|
     |:---|:---|:---|:---|
     |student|String|YES|Student's email address to be suspended.|
-  - Request Params
-    NIL
-  - Response
-    - General Response Structure
+  - Request Params: NIL
+  - Response:
+    - General Response Structure:
         |JSON Attribute Name|JSON Attribute Value Type|Description|
         |:---|:---|:---|
         |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
         |message|String / Objects[]|Any error or success message definitions|
         |errors|String[]|More detailed list of error messages|
         |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
-    - Success Sample
+    - Success Sample:
       - HTTP Response Code: 204
-      - Response Body:
-        NIL
-    - Fail Sample
+      - Response Body: NIL
+    - Fail Sample:
       - HTTP Response Code: 400
       - Response Body:
       ```
@@ -227,26 +224,25 @@ Below details the list of APIs implemented and their specifications.
   - URL Path: /api/retrievefornotifications
   - HTTP Method: POST
   - Description: Use Case 4 : This API enables teachers to retrieve list of students who can receive a notification.
-  - Headers
+  - Headers:
     |Header Name|Header Value|
     |:---|:---|
     |Content-Type|application/json|
-  - Request Body
+  - Request Body:
     |JSON Attribute Name|JSON Attribute Value Type|Mandatory|Description|
     |:---|:---|:---|:---|
     |teacher|String|YES|Teacher's email address to retrieve list of Students under this email.|
     |notification|String|YES|Notification content to be sent to students. Notification content can contain mentioning of student;s email addresses to be sent notification to.|
-  - Request Params
-    NIL
-  - Response
-    - General Response Structure
+  - Request Params: NIL
+  - Response:
+    - General Response Structure:
         |JSON Attribute Name|JSON Attribute Value Type|Description|
         |:---|:---|:---|
         |code|Integer (LOVs : 202, 204, 400, 500)|HTTP codes|
         |message|String / Objects[]|Any error or success message definitions|
         |errors|String[]|More detailed list of error messages|
         |isSuccess|Boolean|Indicates if teh API call outcome is success or failure in overall|
-    - Success Sample
+    - Success Sample:
       - HTTP Response Code: 200
       - Response Body:
         ```
@@ -257,7 +253,7 @@ Below details the list of APIs implemented and their specifications.
           ]
         }
         ```
-    - Fail Sample
+    - Fail Sample:
       - HTTP Response Code: 400
       - Response Body:
       ```
